@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="style.css">
+        
+        <title>Pig Game</title>
+    </head>
+
+    <body>
+        <div class="wrapper clearfix">
+            <div class="player-0-panel active">
+                <div class="player-name" id="name-0">Player 1</div>
+                <div class="player-score" id="score-0">43</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-0">11</div>
+                </div>
+            </div>
+            
+            <div class="player-1-panel">
+                <div class="player-name" id="name-1">Player 2</div>
+                <div class="player-score" id="score-1">72</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-1">0</div>
+                </div>
+            </div>
+            
+            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+            <button class="btn-settings"><i class="ion-ios-gear-outline"></i>Setting</button>
+            <button class="btn-help"><i class="ion-ios-help-outline"></i>Help</button>
+            
+            <img src="dice-5.png" alt="Dice" class="one-dice-panel" style="display: none;">
+            
+            <div class="two-dice-panel" style="display: none;">
+                <img src="dice-5.png" alt="Dice" class="dice" id="dice-0">
+                <img src="dice-5.png" alt="Dice" class="dice" id="dice-1">  
+            </div>
+            
+            
+            <div id="modal-settings" class="modal" style="display: none;">
+                <div class="modal-content">
+                   <span id="modal-settings-close"><i class="ion-android-close"></i></span> 
+                     <div class="modal-label">Settings</div>
+                    <div class="input-panel">
+                        <div class="input-group">
+                            <label>Player 1 name:</label>
+                            <input type="text" id="input-name-0" onclick="this.select();">
+                        </div>
+                        <div class="input-group">
+                            <label>Player 2 name:</label>
+                            <input type="text" id="input-name-1" onclick="this.select();">
+                        </div>
+                        <div class="input-group">
+                            <label>Winning score:</label>
+                            <input type="text" id="input-score" onclick="this.select();">
+                        </div>
+                         <div class="input-group">
+                            <label>Number of dice:</label>
+                            <select id="dice-choice">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                         <button class="btn-save"><i class="ion-ios-checkmark-outline"></i>Save</button>
+                         <button class="btn-cancel"><i class="ion-ios-close-outline"></i>Cancel</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="modal-help" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span id="modal-help-close">
+                        <i class="ion-android-close"></i>
+                    </span>
+                    <div class="modal-label">Instructions</div>
+                    <div class="help-content">
+                        <p>
+                            Pig is a simple dice game. It is known as a jeopardy dice game, because the primary decision is whether or not to jeopardise previous gains by rolling for potential greater gains.
+                            <br>
+                            <br>
+                            <strong>Gameplay</strong>
+                            <br>
+                            Each turn, players may "roll" the dice as many times as they wish. Each roll is added to the currrent score. If a player chooses to "hold", their current score is added to their total score, and it becomes the next player's turn.
+                            <br>
+                            <br>
+                            When playing in
+                            <strong>One-dice mode</strong>
+                            : 
+                         </p>
+                         <ul class="help-list">
+                             <li>
+                                 if the player rolls a one, they score nothing and it becomes the next player's turn
+                             </li>
+                             <li>
+                                 if the player rolls a six in two consecutive rolls, the player's total score is lost and it becomes the next player's turn.
+                             </li>
+                         </ul>
+                            <br>
+                            When playing in
+                            <strong>Two-dice mode</strong>
+                            : 
+                          <ul class="help-list">
+                             <li>
+                                 if the player rolls a one on either dice, they score nothing and it becomes the next player's turn
+                             </li>
+                             <li>
+                                 if the player rolls two sixes, and on the next roll, if either dice is a six, the player's total score is lost and it becomes the next player's turn.
+                             </li>
+                         </ul>
+                         <br>
+                         The first player to reach the winning score (default: 100 points) wins the game.
+                         <br>
+                         <br>
+                         <strong>Settings</strong>
+                         <br>
+                         The settings menu allows game options to be changed, including the player names, the winning score and the number of dice (default: 1). These options may be changed at any time, except during a player's turn.
+                         <p></p>
+                           
+                         <br>
+                    </div>
+                    <button class="btn-close">
+                        <i class="ion-ios-close-outline"></i>
+                        Close
+                    </button>
+                    <br>
+                </div>
+                
+              
+                
+            </div>
+            
+        </div>
+        
+     <!--  <script src="app.js"></script>-->
+      <!--  <script src="challenges.js"></script>-->
+      <script src = "challenges-1.js"></script>
+    </body>
+</html>
